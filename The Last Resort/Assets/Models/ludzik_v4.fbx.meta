@@ -1,17 +1,15 @@
 fileFormatVersion: 2
-guid: 16893a922f8317d4ba9ddb1f266e8e8e
+guid: 3f613717000ffb54eb5ae683619f962c
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
-      74: 2936505214672696618
-    second: Szkielet|SzkieletAction
-  externalObjects:
+      74: 5730966330355406087
+    second: Szkielet|Idle
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: 712679df1cec66d4bb59a468934b85b3, type: 2}
+      74: -8920121080758017325
+    second: Szkielet|Walk
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
