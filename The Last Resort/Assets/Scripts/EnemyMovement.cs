@@ -14,7 +14,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            Debug.Log("W");
+            //Debug.Log("W");
             animation.SetFloat("Speed", 1f, 0.1f, Time.deltaTime);
         }
         else
