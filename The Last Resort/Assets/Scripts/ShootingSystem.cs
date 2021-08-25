@@ -12,9 +12,14 @@ public class ShootingSystem : MonoBehaviour
 
     private float timeOfLastShoot = 0;
     public float shootPeriod = 1f;
- 
+
+    public GameObject pistol;
+    public GameObject rifle;
+
     void Update()
     {
+        ChangeWeapon();
+
         if (!Input.GetKey(KeyCode.Mouse0)) return;
 
         if (Time.timeSinceLevelLoad - timeOfLastShoot < shootPeriod) return;
@@ -29,7 +34,21 @@ public class ShootingSystem : MonoBehaviour
         var rigidbody = bullet.GetComponent<Rigidbody>();
 
         rigidbody.velocity = transform.rotation * shootDirection;
+    }
 
-        Destroy(bullet, 2f);
+    public void ChangeWeapon()
+    {
+        if (Input.GetKey(KeyCode.Alpha1))
+        {
+           rifle.SetActive(false);
+           shootPeriod = 0.5f;
+           pistol.SetActive(true);
+        }
+        else if (Input.GetKey(KeyCode.Alpha2))
+        {
+            rifle.SetActive(true);
+            shootPeriod = 0.1f;
+            pistol.SetActive(false);
+        }
     }
 }

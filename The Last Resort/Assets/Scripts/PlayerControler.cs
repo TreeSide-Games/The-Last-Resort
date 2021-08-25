@@ -55,7 +55,7 @@ public class PlayerControler : MonoBehaviour {
 			aktualnaWysokoscSkoku += Physics.gravity.y * Time.deltaTime;
 		}
 		
-		Debug.Log (Physics.gravity.y);
+		//Debug.Log (Physics.gravity.y);
 		
 		//Bieganie
 		if(Input.GetKeyDown("left shift")) {
