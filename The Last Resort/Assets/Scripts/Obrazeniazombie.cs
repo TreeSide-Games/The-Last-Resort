@@ -1,9 +1,8 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Apteczka : MonoBehaviour
-
+public class Obrazeniazombie : MonoBehaviour
 {
     public bool Leczy;
     private void OnTriggerEnter(Collider other)
@@ -19,7 +18,7 @@ public class Apteczka : MonoBehaviour
             else
             {
                 other.GetComponent<Gracz>().OdejmijZycie();
-                Destroy(gameObject);
+                
 
             }
 
