@@ -836,7 +836,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8412762c21f17ac4db42ceb248e7b9f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   player: {fileID: 292608399}
+=======
+  player: {fileID: 1266236618}
+>>>>>>> Stashed changes
 --- !u!1 &1743531894
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,6 +917,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2137375763 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6451674872007985469, guid: 781a3179de23f3b438719c6d2cf52403, type: 3}
+  m_PrefabInstance: {fileID: 5425094097873103398}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2137375766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137375763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f049fe37f4d88499a39374134a1e19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookRadius: 10
 --- !u!4 &543450652808765371 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1512143888761831359, guid: 11e5f8dc2551cbe4e83af2989d39a8a1, type: 3}
