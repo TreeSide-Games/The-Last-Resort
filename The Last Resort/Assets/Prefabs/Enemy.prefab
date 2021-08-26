@@ -88,6 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f5b9f57cc3ecb4eb0386a66b5c6761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bloodParticles: {fileID: 2677211683910285890, guid: 695d9e1ab77e25342b4d732af88387d4, type: 3}
   health: 2
 --- !u!95 &1628800114423027372
 Animator:
