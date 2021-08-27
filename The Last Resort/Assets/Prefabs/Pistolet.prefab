@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7152515074322753658}
   - component: {fileID: 6119561784760035295}
   - component: {fileID: 8289431797028983573}
+  - component: {fileID: 8990335812026818585}
   - component: {fileID: 7262177463427492723}
   m_Layer: 0
   m_Name: Pistolet
@@ -84,6 +85,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8990335812026818585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7496529913345880768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19c38846f9b95f42a6facd2176a5287, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeOfWeapon: 0
 --- !u!82 &7262177463427492723
 AudioSource:
   m_ObjectHideFlags: 0
