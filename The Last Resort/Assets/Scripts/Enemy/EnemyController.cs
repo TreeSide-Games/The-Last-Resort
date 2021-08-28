@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour
     {
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
+        animation = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -27,6 +28,7 @@ public class EnemyController : MonoBehaviour
         if(distance <= lookRadius)
         {
             agent.SetDestination(target.position);
+            animation.SetFloat("Speed", 1f, 0.1f, Time.deltaTime);
 
             if (distance <= agent.stoppingDistance)
             {
@@ -35,14 +37,16 @@ public class EnemyController : MonoBehaviour
 
             }
         }
+        else
+        {
+            animation.SetFloat("Speed", 0f, 0.1f, Time.deltaTime);
+        }
     }
     public void FaceTarget()
     {
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
-        animation.SetFloat("Speed", 1f, 0.1f, Time.deltaTime);
-
     }
 
     public void OnDrawGizmosSelected()

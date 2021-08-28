@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public GameObject bloodParticles;
-    public float health = 2f;
+    public float health = 1f;
 
     public GameObject brokenObject;
     public float breakForce;
@@ -15,13 +15,12 @@ public class EnemyHealth : MonoBehaviour
         var layerID = collision.collider.gameObject.layer;
         var layerName = LayerMask.LayerToName(layerID);
 
-        if(layerName == "Bullet")
+        switch (layerName)
         {
-            health -= 0.5f;
-
-            var positionOfCollision = collision.contacts[0].point;
-            GameObject blood = Instantiate(bloodParticles, positionOfCollision, Quaternion.identity);
-            Destroy(blood, 1f);
+            case "BulletPistol": health -= 0.25f; releaseBlood(collision); break;
+            case "BulletRifle": health -= 0.25f; releaseBlood(collision); break;
+            case "BulletBigge": health -= 1.2f; releaseBlood(collision); break;
+            default: break;
         }
 
         if(health <= 0)
@@ -43,5 +42,12 @@ public class EnemyHealth : MonoBehaviour
 
         Destroy(gameObject);
         Destroy(broken, 20f);
+    }
+
+    private void releaseBlood(Collision collision)
+    {
+        var positionOfCollision = collision.contacts[0].point;
+        GameObject blood = Instantiate(bloodParticles, positionOfCollision, Quaternion.identity);
+        Destroy(blood, 1f);
     }
 }

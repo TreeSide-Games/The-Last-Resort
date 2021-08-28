@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ShootingSystem : MonoBehaviour
 {
-    public GameObject bulletPrefab;
+    public GameObject[] bulletPrefab;
     public GameObject shootFlashPrefab;
     public AudioSource[] soundOfShoot;
 
@@ -27,9 +27,10 @@ public class ShootingSystem : MonoBehaviour
     private void Start()
     {
         soundOfShoot = GetComponents<AudioSource>();
-        amountOfMagazines[0] = 1;
-        amountOfMagazines[1] = 1;
-        amountOfMagazines[2] = 1;
+        amountOfBullets[0] = 6;
+        amountOfBullets[1] = 30;
+        amountOfBullets[2] = 3;
+        displayAmountOfBulltes();
     }
     void Update()
     {
@@ -54,14 +55,8 @@ public class ShootingSystem : MonoBehaviour
 
         var shootFlash = Instantiate(shootFlashPrefab);
         shootFlash.transform.position = transform.position + transform.rotation * spawnPosition;
-        
 
-        var bullet = Instantiate(bulletPrefab);
-        bullet.transform.position = transform.position + transform.rotation * spawnPosition;
-
-        var rigidbody = bullet.GetComponent<Rigidbody>();
-
-        rigidbody.velocity = transform.rotation * shootDirection;
+        bulletRelease(magazinesID);
 
         afterShoot();
     }
@@ -144,5 +139,16 @@ public class ShootingSystem : MonoBehaviour
     private void afterShoot()
     {
         transform.Rotate(new Vector3(300f, 0, 0) * Time.deltaTime);
+    }
+
+    private void bulletRelease(int typeOfWeapon)
+    {
+        var bullet = Instantiate(bulletPrefab[typeOfWeapon]);
+        
+        bullet.transform.position = transform.position + transform.rotation * spawnPosition;
+
+        var rigidbody = bullet.GetComponent<Rigidbody>();
+
+        rigidbody.velocity = transform.rotation * shootDirection;
     }
 }
