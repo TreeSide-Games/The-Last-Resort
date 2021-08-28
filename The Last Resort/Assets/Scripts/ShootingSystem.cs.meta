@@ -3,7 +3,12 @@ guid: 468a050f1bda73c4bb5c3fd95e29c797
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - bulletPrefab: {instanceID: 0}
+  - soundOfShoot: {instanceID: 0}
+  - bulletsCounter: {instanceID: 0}
+  - pistol: {fileID: 919132149155446097, guid: bd56f63c51402284e9a8d52440ed9011, type: 3}
+  - rifle: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
