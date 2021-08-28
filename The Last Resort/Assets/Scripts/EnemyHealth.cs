@@ -20,7 +20,8 @@ public class EnemyHealth : MonoBehaviour
             health -= 0.5f;
 
             var positionOfCollision = collision.contacts[0].point;
-            Instantiate(bloodParticles, positionOfCollision, Quaternion.identity);
+            GameObject blood = Instantiate(bloodParticles, positionOfCollision, Quaternion.identity);
+            Destroy(blood, 1f);
         }
 
         if(health <= 0)
