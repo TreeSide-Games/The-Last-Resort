@@ -9,7 +9,7 @@ public class Obrazeniazombie : MonoBehaviour
     {
         if (other.GetComponent<Gracz>())
         {
-            Debug.Log("Działa");
+            //Debug.Log("Działa");
             if (Leczy)
             {
                 other.GetComponent<Gracz>().DodajZycie();

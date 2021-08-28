@@ -14,6 +14,7 @@ public class ShootingSystem : MonoBehaviour
     private float timeOfLastShoot = 0;
     public float shootPeriod = 1f;
     public int magazineCapacity = 6;
+    private int[] amountOfMagazines = new int[2];
     private int[] amountOfBullets = new int[2];
     private int magazinesID = 0;
 
@@ -29,10 +30,9 @@ public class ShootingSystem : MonoBehaviour
     {
         ChangeWeapon();
 
-        if (Input.GetKey(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            amountOfBullets[magazinesID] = magazineCapacity;
-            displayAmountOfBulltes();
+            Reload();
         }
 
         if (!Input.GetKey(KeyCode.Mouse0)) return;
@@ -79,6 +79,20 @@ public class ShootingSystem : MonoBehaviour
         }
     }
 
+    public void addMagazine(int typeOfWeapon)
+    {
+        amountOfMagazines[typeOfWeapon]++;
+    }
+
+    private void Reload()
+    {
+        if (amountOfMagazines[magazinesID] < 1) return;
+        if (amountOfBullets[magazinesID] == magazineCapacity) return;
+
+        amountOfMagazines[magazinesID]--;
+        amountOfBullets[magazinesID] = magazineCapacity;
+        displayAmountOfBulltes();
+    }
     private void displayAmountOfBulltes()
     {
         bulletsCounter.GetComponent<TextMeshProUGUI>().text = amountOfBullets[magazinesID] + "/" + magazineCapacity;

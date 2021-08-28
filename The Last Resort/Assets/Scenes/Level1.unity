@@ -869,6 +869,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "bro\u0144 nr 3"
       objectReference: {fileID: 0}
+    - target: {fileID: 2658954919491022227, guid: 10b2542bf0eb2ad49ace0152772e2ffb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3435492000537409321, guid: 10b2542bf0eb2ad49ace0152772e2ffb, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1567,6 +1571,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 292608399}
+--- !u!114 &1447430355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447430350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efa0e55f83a2085418fe270ead48d196, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+  - {fileID: 2733504175946693452, guid: 1a3ba794719eb074ba7f714808343b25, type: 3}
+  - {fileID: 7496529913345880768, guid: 702dd9493879b174881735d9aeb81945, type: 3}
+  spawnRate: 3
+  minX: 10
+  maxX: 50
+  minZ: 10
+  maxZ: 50
 --- !u!1 &1727608206 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 481557523006384303, guid: 065b5c4a8690fb04e8a768ba986417a6, type: 3}
@@ -2042,7 +2066,8 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: e639001ce1b7d42438f56d6dad7bb56e, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6279521754705643256, guid: 1a3ba794719eb074ba7f714808343b25, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1a3ba794719eb074ba7f714808343b25, type: 3}
 --- !u!4 &543450652891138182 stripped
 Transform:
