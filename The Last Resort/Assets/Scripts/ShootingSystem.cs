@@ -6,7 +6,7 @@ using UnityEngine;
 public class ShootingSystem : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    public AudioSource soundOfShoot;
+    public AudioSource[] soundOfShoot;
 
     public Vector3 spawnPosition;
     public Vector3 shootDirection;
@@ -21,7 +21,10 @@ public class ShootingSystem : MonoBehaviour
 
     public GameObject pistol;
     public GameObject rifle;
-
+    private void Start()
+    {
+        soundOfShoot = GetComponents<AudioSource>();
+    }
     void Update()
     {
         ChangeWeapon();
@@ -40,7 +43,7 @@ public class ShootingSystem : MonoBehaviour
 
         timeOfLastShoot = Time.timeSinceLevelLoad;
 
-        soundOfShoot.Play();
+        shootingPlay();
         amountOfBullets[magazinesID]--;
         displayAmountOfBulltes();
 
@@ -79,5 +82,17 @@ public class ShootingSystem : MonoBehaviour
     private void displayAmountOfBulltes()
     {
         bulletsCounter.GetComponent<TextMeshProUGUI>().text = amountOfBullets[magazinesID] + "/" + magazineCapacity;
+    }
+
+    private void shootingPlay()
+    {
+        if (pistol.active == true)
+        {
+            soundOfShoot[0].Play();
+        }
+        else
+        {
+            soundOfShoot[1].Play();
+        }
     }
 }
