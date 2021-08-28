@@ -77,11 +77,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7496529913345880768, guid: 702dd9493879b174881735d9aeb81945, type: 3}
       propertyPath: m_Name
-      value: Pistolet
+      value: Pistolet Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7496529913345880768, guid: 702dd9493879b174881735d9aeb81945, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7496529913345880768, guid: 702dd9493879b174881735d9aeb81945, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -1161660929161641242, guid: 702dd9493879b174881735d9aeb81945, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 702dd9493879b174881735d9aeb81945, type: 3}

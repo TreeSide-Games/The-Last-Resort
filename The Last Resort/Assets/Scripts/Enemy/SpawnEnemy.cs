@@ -24,6 +24,7 @@ public class SpawnEnemy : MonoBehaviour
     {
         spawnPosition = new Vector3(Random.Range(minX, maxX), 1.51f, Random.Range(minZ, maxZ));
 
-        Instantiate(enemies[Random.Range(0, enemies.Length)], spawnPosition, Quaternion.identity);
+        var random = Random.Range(0, enemies.Length);
+        Instantiate(enemies[random], spawnPosition,  enemies[random].transform.rotation);
     }
 }
