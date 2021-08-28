@@ -6,6 +6,7 @@ using UnityEngine;
 public class ShootingSystem : MonoBehaviour
 {
     public GameObject bulletPrefab;
+    public GameObject shootFlashPrefab;
     public AudioSource[] soundOfShoot;
 
     public Vector3 spawnPosition;
@@ -14,17 +15,21 @@ public class ShootingSystem : MonoBehaviour
     private float timeOfLastShoot = 0;
     public float shootPeriod = 1f;
     public int magazineCapacity = 6;
-    private int[] amountOfMagazines = new int[2];
-    private int[] amountOfBullets = new int[2];
+    private int[] amountOfMagazines = new int[3];
+    private int[] amountOfBullets = new int[3];
     private int magazinesID = 0;
 
     public GameObject bulletsCounter;
 
     public GameObject pistol;
     public GameObject rifle;
+    public GameObject biggun;
     private void Start()
     {
         soundOfShoot = GetComponents<AudioSource>();
+        amountOfMagazines[0] = 1;
+        amountOfMagazines[1] = 1;
+        amountOfMagazines[2] = 1;
     }
     void Update()
     {
@@ -47,33 +52,55 @@ public class ShootingSystem : MonoBehaviour
         amountOfBullets[magazinesID]--;
         displayAmountOfBulltes();
 
+        var shootFlash = Instantiate(shootFlashPrefab);
+        shootFlash.transform.position = transform.position + transform.rotation * spawnPosition;
+        
+
         var bullet = Instantiate(bulletPrefab);
         bullet.transform.position = transform.position + transform.rotation * spawnPosition;
 
         var rigidbody = bullet.GetComponent<Rigidbody>();
 
         rigidbody.velocity = transform.rotation * shootDirection;
+
+        afterShoot();
     }
 
     public void ChangeWeapon()
     {
         if (Input.GetKey(KeyCode.Alpha1))
         {
+           pistol.SetActive(true);
            rifle.SetActive(false);
-           shootPeriod = 0.5f;
+           biggun.SetActive(false);
+
+            shootPeriod = 0.5f;
            magazineCapacity = 6;
            magazinesID = 0;
-           pistol.SetActive(true);
 
            displayAmountOfBulltes();
         }
         else if (Input.GetKey(KeyCode.Alpha2))
         {
+            pistol.SetActive(false);
             rifle.SetActive(true);
+            biggun.SetActive(false);
+
             shootPeriod = 0.1f;
             magazineCapacity = 30;
             magazinesID = 1;
+
+            displayAmountOfBulltes();
+        }
+        else if (Input.GetKey(KeyCode.Alpha3))
+        {
             pistol.SetActive(false);
+            rifle.SetActive(false);
+            biggun.SetActive(true);
+
+            shootPeriod = 1f;
+            magazineCapacity = 3;
+            magazinesID = 2;
 
             displayAmountOfBulltes();
         }
@@ -104,9 +131,18 @@ public class ShootingSystem : MonoBehaviour
         {
             soundOfShoot[0].Play();
         }
-        else
+        else if (rifle.active == true)
         {
             soundOfShoot[1].Play();
         }
+        else
+        {
+            soundOfShoot[2].Play();
+        }
+    }
+
+    private void afterShoot()
+    {
+        transform.Rotate(new Vector3(300f, 0, 0) * Time.deltaTime);
     }
 }
