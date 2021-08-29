@@ -63,6 +63,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7262177463427492723, guid: 702dd9493879b174881735d9aeb81945, type: 3}
+      propertyPath: m_Volume
+      value: 0.715
+      objectReference: {fileID: 0}
+    - target: {fileID: 7262177463427492723, guid: 702dd9493879b174881735d9aeb81945, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4eaae2378eeb61a46829f6c95337384b, type: 3}
+    - target: {fileID: 7262177463427492723, guid: 702dd9493879b174881735d9aeb81945, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7496529913345880768, guid: 702dd9493879b174881735d9aeb81945, type: 3}
       propertyPath: m_Name
       value: Pistolet Variant 1
@@ -79,5 +91,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: 9612987fa84a9d44697f6fede2cd9c49, type: 2}
+    - target: {fileID: 8990335812026818585, guid: 702dd9493879b174881735d9aeb81945, type: 3}
+      propertyPath: reloadSound
+      value: 
+      objectReference: {fileID: 6525967117983476637}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 702dd9493879b174881735d9aeb81945, type: 3}
+--- !u!82 &6525967117983476637 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7262177463427492723, guid: 702dd9493879b174881735d9aeb81945, type: 3}
+  m_PrefabInstance: {fileID: 4492493914212237550}
+  m_PrefabAsset: {fileID: 0}

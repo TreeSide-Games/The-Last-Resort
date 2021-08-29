@@ -8,7 +8,7 @@ public class BrutalController : MonoBehaviour
     public float lookRadius = 50f;
     public float forwardingRadius = 10f;
 
-    public Transform target;
+    public Transform player;
     public NavMeshAgent agent;
 
     private Animator animation;
@@ -16,7 +16,7 @@ public class BrutalController : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        target = PlayerManager.instance.player.transform;
+        player = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
         animation = GetComponentInChildren<Animator>();
     }
@@ -24,11 +24,11 @@ public class BrutalController : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        float distance = Vector3.Distance(target.position, transform.position);
+        float distance = Vector3.Distance(player.position, transform.position);
 
         if (distance <= lookRadius)
         {
-            agent.SetDestination(target.position);
+            agent.SetDestination(player.position);
 
             if (distance <= forwardingRadius)
             {
@@ -54,7 +54,7 @@ public class BrutalController : MonoBehaviour
     }
     public void FaceTarget()
     {
-        Vector3 direction = (target.position - transform.position).normalized;
+        Vector3 direction = (player.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }

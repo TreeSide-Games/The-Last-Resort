@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3389869384402388739, guid: 1a3ba794719eb074ba7f714808343b25, type: 3}
+      propertyPath: reloadSound
+      value: 
+      objectReference: {fileID: 4562748475524744614}
     - target: {fileID: 2733504175946693452, guid: 1a3ba794719eb074ba7f714808343b25, type: 3}
       propertyPath: m_Name
       value: Karabin V2 Variant 1
@@ -83,5 +87,26 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 7043168996860806479, guid: 1a3ba794719eb074ba7f714808343b25, type: 3}
+      propertyPath: m_Volume
+      value: 0.726
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043168996860806479, guid: 1a3ba794719eb074ba7f714808343b25, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043168996860806479, guid: 1a3ba794719eb074ba7f714808343b25, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4eaae2378eeb61a46829f6c95337384b, type: 3}
+    - target: {fileID: 7043168996860806479, guid: 1a3ba794719eb074ba7f714808343b25, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a3ba794719eb074ba7f714808343b25, type: 3}
+--- !u!82 &4562748475524744614 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7043168996860806479, guid: 1a3ba794719eb074ba7f714808343b25, type: 3}
+  m_PrefabInstance: {fileID: 6839982063919382761}
+  m_PrefabAsset: {fileID: 0}

@@ -9,7 +9,9 @@ public class CollectingAmmo : MonoBehaviour
     {
         if (other.name != "Gracz") return;
 
+        GetComponent<AudioSource>().Play();
+
         other.GetComponentInChildren<ShootingSystem>().addMagazine(typeOfWeapon);
-        Destroy(gameObject);
+        Destroy(gameObject, 0.5f);
     }
 }

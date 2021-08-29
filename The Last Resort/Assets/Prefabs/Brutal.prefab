@@ -30,7 +30,7 @@ GameObject:
   - component: {fileID: 2900794216880003589}
   - component: {fileID: 2900794216880003590}
   - component: {fileID: 2900794216880003591}
-  - component: {fileID: 2900794216880003584}
+  - component: {fileID: 2064301518380963748}
   - component: {fileID: 3044146010052609270}
   - component: {fileID: 2900794216880003585}
   m_Layer: 0
@@ -66,8 +66,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.26, y: 25, z: 2.26}
-  m_Center: {x: 0, y: 0.4, z: 0.36}
+  m_Size: {x: 14.98, y: 31.27, z: 12.7}
+  m_Center: {x: 0, y: 0.4, z: 3.08}
 --- !u!54 &2900794216880003591
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -84,7 +84,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2900794216880003584
+--- !u!114 &2064301518380963748
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,12 +93,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2900794216880003586}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6f049fe37f4d88499a39374134a1e19, type: 3}
+  m_Script: {fileID: 11500000, guid: 40f5b9f57cc3ecb4eb0386a66b5c6761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRadius: 40
-  target: {fileID: 0}
-  agent: {fileID: 2900794216880003585}
+  bloodParticles: {fileID: 2677211683910285890, guid: 695d9e1ab77e25342b4d732af88387d4, type: 3}
+  health: 3
+  brokenObject: {fileID: 3104195002338228503, guid: 07ab138f98074244c80304a92b34402c, type: 3}
+  breakForce: 700
 --- !u!114 &3044146010052609270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +112,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 743fdec1fa7a8ff4d952ed052b43b1c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lookRadius: 50
+  forwardingRadius: 10
+  player: {fileID: 0}
+  agent: {fileID: 2900794216880003585}
 --- !u!195 &2900794216880003585
 NavMeshAgent:
   m_ObjectHideFlags: 0

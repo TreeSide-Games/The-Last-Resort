@@ -8,6 +8,7 @@ public class ShootingSystem : MonoBehaviour
     public GameObject[] bulletPrefab;
     public GameObject shootFlashPrefab;
     public AudioSource[] soundOfShoot;
+    public AudioSource reloadSound;
 
     public Vector3 spawnPosition;
     public Vector3 shootDirection;
@@ -111,6 +112,7 @@ public class ShootingSystem : MonoBehaviour
         if (amountOfMagazines[magazinesID] < 1) return;
         if (amountOfBullets[magazinesID] == magazineCapacity) return;
 
+        reloadSound.Play();
         amountOfMagazines[magazinesID]--;
         amountOfBullets[magazinesID] = magazineCapacity;
         displayAmountOfBulltes();
