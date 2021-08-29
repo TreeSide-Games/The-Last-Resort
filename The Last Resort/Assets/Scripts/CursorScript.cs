@@ -9,5 +9,4 @@ public class CursorScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
-
 }

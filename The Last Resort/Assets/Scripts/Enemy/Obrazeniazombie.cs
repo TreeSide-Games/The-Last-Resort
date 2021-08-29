@@ -5,20 +5,26 @@ using UnityEngine;
 public class Obrazeniazombie : MonoBehaviour
 {
     public bool Leczy;
+    private Gracz player;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Gracz>())
+        player = other.GetComponent<Gracz>();
+        if (player)
         {
             //Debug.Log("Działa");
             if (Leczy)
             {
-                other.GetComponent<Gracz>().DodajZycie();
+                player.DodajZycie();
                 Destroy(gameObject);
             }
             else
             {
-                other.GetComponent<Gracz>().OdejmijZycie();
-                
+                player.OdejmijZycie();
+
+                if(gameObject.tag == "Brutal")
+                {
+                    player.OdejmijZycie();
+                }
 
             }
 
