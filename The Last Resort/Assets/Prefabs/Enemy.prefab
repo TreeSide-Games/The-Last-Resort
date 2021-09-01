@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6f049fe37f4d88499a39374134a1e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRadius: 10
+  lookRadius: 70
   target: {fileID: 0}
   agent: {fileID: -1113406024989716568}
 --- !u!114 &-3938052561217846892
