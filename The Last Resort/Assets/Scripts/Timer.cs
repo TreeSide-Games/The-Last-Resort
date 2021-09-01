@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
     public GameObject timer;
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(GameObject.Find("timer"));
     }
 
