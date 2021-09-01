@@ -30,7 +30,9 @@ public class ShootingSystem : MonoBehaviour
         soundOfShoot = GetComponents<AudioSource>();
         amountOfBullets[0] = 6;
         amountOfBullets[1] = 30;
-        amountOfBullets[2] = 3;
+        amountOfBullets[2] = 4;
+
+        amountOfMagazines[0] = 1;
         displayAmountOfBulltes();
     }
     void Update()
@@ -70,7 +72,7 @@ public class ShootingSystem : MonoBehaviour
            rifle.SetActive(false);
            biggun.SetActive(false);
 
-            shootPeriod = 0.5f;
+           shootPeriod = 0.5f;
            magazineCapacity = 6;
            magazinesID = 0;
 
@@ -95,7 +97,7 @@ public class ShootingSystem : MonoBehaviour
             biggun.SetActive(true);
 
             shootPeriod = 1f;
-            magazineCapacity = 3;
+            magazineCapacity = 4;
             magazinesID = 2;
 
             displayAmountOfBulltes();
@@ -113,7 +115,10 @@ public class ShootingSystem : MonoBehaviour
         if (amountOfBullets[magazinesID] == magazineCapacity) return;
 
         reloadSound.Play();
-        amountOfMagazines[magazinesID]--;
+        if (magazinesID != 0)
+        {
+          amountOfMagazines[magazinesID]--;
+        }
         amountOfBullets[magazinesID] = magazineCapacity;
         displayAmountOfBulltes();
     }
