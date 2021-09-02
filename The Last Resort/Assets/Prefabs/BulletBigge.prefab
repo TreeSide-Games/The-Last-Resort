@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2352029166769436496, guid: bffe34a18ebe5274ab7e8b88aa037b7e, type: 3}
+      propertyPath: m_TagString
+      value: Bullet
+      objectReference: {fileID: 0}
     - target: {fileID: 8532752005626159311, guid: bffe34a18ebe5274ab7e8b88aa037b7e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
