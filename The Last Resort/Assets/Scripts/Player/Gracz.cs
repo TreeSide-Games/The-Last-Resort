@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Gracz : MonoBehaviour
 {
     public GameObject pasekZycia;
+    public AudioSource[] dzwiekObrazen;
     public float zycie = 0.3f;
 
     private void Start()
@@ -25,6 +26,9 @@ public class Gracz : MonoBehaviour
         zycie -= 0.3f;
         zycie = Mathf.Clamp(zycie, 0, 1);
         pasekZycia.GetComponent<Slider>().value = zycie;
+
+        var random = Random.Range(0, 2);
+        dzwiekObrazen[random].Play();
 
         if(zycie <= 0)
         {

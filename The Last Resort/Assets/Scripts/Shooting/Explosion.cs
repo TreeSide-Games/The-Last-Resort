@@ -4,22 +4,13 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject explosion;
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag != "bullet") return;
+        if (collision.gameObject.tag != "Bullet") return;
 
+        Instantiate(explosion, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 }
