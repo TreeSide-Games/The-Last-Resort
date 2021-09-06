@@ -26,7 +26,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac722043ede2f744be2d2bb26c320c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 9087219390385421524, guid: 8cb9f387e1762d74a8f3b518e065bb22, type: 3}
+  explosionParticle: {fileID: 9087219390385421524, guid: 8cb9f387e1762d74a8f3b518e065bb22, type: 3}
+  explosionRadius: 5
+  explosionForce: 100
 --- !u!1001 &1361887166669172114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44,27 +46,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5230301740382595687, guid: c409f10c9527480429404297e207c418, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.11432
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5230301740382595687, guid: c409f10c9527480429404297e207c418, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.6525929
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5230301740382595687, guid: c409f10c9527480429404297e207c418, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.27070096
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5230301740382595687, guid: c409f10c9527480429404297e207c418, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.1063
+      value: 50.9
       objectReference: {fileID: 0}
     - target: {fileID: 5230301740382595687, guid: c409f10c9527480429404297e207c418, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3058
+      value: 1.36
       objectReference: {fileID: 0}
     - target: {fileID: 5230301740382595687, guid: c409f10c9527480429404297e207c418, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0189
+      value: 179.86252
       objectReference: {fileID: 0}
     - target: {fileID: 5230301740382595687, guid: c409f10c9527480429404297e207c418, type: 3}
       propertyPath: m_LocalRotation.w
