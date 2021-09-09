@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5852557723158601039, guid: a58b68bbf8ec6c442b01f3d5fa4404a7, type: 3}
       propertyPath: m_Name
-      value: BECZKA V2 (1) Variant
+      value: BECZKA V2 (1) Variant Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6517736228222535669, guid: a58b68bbf8ec6c442b01f3d5fa4404a7, type: 3}
       propertyPath: m_RootOrder
