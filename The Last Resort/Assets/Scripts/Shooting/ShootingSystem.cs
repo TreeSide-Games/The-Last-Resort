@@ -25,6 +25,8 @@ public class ShootingSystem : MonoBehaviour
     public GameObject pistol;
     public GameObject rifle;
     public GameObject biggun;
+
+    private Magazines magazines;
     private void Start()
     {
         soundOfShoot = GetComponents<AudioSource>();
@@ -34,6 +36,7 @@ public class ShootingSystem : MonoBehaviour
 
         amountOfMagazines[0] = 1;
         displayAmountOfBulltes();
+        magazines = GetComponent<Magazines>();
     }
     void Update()
     {
@@ -77,6 +80,7 @@ public class ShootingSystem : MonoBehaviour
            magazinesID = 0;
 
            displayAmountOfBulltes();
+           magazines.ChangeMagazine(amountOfMagazines[magazinesID], magazinesID);
         }
         else if (Input.GetKey(KeyCode.Alpha2))
         {
@@ -89,6 +93,7 @@ public class ShootingSystem : MonoBehaviour
             magazinesID = 1;
 
             displayAmountOfBulltes();
+            magazines.ChangeMagazine(amountOfMagazines[magazinesID], magazinesID);
         }
         else if (Input.GetKey(KeyCode.Alpha3))
         {
@@ -101,12 +106,17 @@ public class ShootingSystem : MonoBehaviour
             magazinesID = 2;
 
             displayAmountOfBulltes();
+            magazines.ChangeMagazine(amountOfMagazines[magazinesID], magazinesID);
         }
     }
 
     public void addMagazine(int typeOfWeapon)
     {
         amountOfMagazines[typeOfWeapon]++;
+        if (typeOfWeapon == magazinesID)
+        {
+            magazines.AddMagazine();
+        }
     }
 
     private void Reload()
@@ -121,6 +131,7 @@ public class ShootingSystem : MonoBehaviour
         }
         amountOfBullets[magazinesID] = magazineCapacity;
         displayAmountOfBulltes();
+        magazines.RemoveMagazine();
     }
     private void displayAmountOfBulltes()
     {
