@@ -5,8 +5,10 @@ using UnityEngine;
 public class Explosion : MonoBehaviour
 {
     public GameObject explosionParticle;
-    public float explosionRadius = 5f;
+    public float explosionRadius = 10f;
     public float explosionForce = 100f;
+
+    public bool canExplode = true;
 
     public void OnCollisionEnter(Collision collision)
     {
@@ -17,6 +19,8 @@ public class Explosion : MonoBehaviour
 
     public void MakeExplosion()
     {
+        if (!canExplode) return;
+
         Instantiate(explosionParticle, transform.position, transform.rotation);
 
         Collider[] collidersToBreak = Physics.OverlapSphere(transform.position, explosionRadius);
@@ -28,11 +32,6 @@ public class Explosion : MonoBehaviour
             {
                 destruction.Break();
             }
-            //Explosion explode = nearbyObject.GetComponent<Explosion>();
-            //if(explode != null)
-            //{
-            //    explode.MakeExplosion();
-            //}
         }
 
         Collider[] collidersToForce = Physics.OverlapSphere(transform.position, explosionRadius);
@@ -46,6 +45,17 @@ public class Explosion : MonoBehaviour
             }
         }
 
+        Collider[] collidersToExplode = Physics.OverlapSphere(transform.position, explosionRadius+2f);
+
+        foreach (Collider nearbyObject in collidersToExplode)
+        {
+            Explosion secondExplode = nearbyObject.GetComponent<Explosion>();
+            if (secondExplode != null && nearbyObject != gameObject.GetComponent<MeshCollider>())
+            {
+                canExplode = false;
+                secondExplode.MakeExplosion();
+            }
+        }
         Destroy(gameObject);
     }
 
