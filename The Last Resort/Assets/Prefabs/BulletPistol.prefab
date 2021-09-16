@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8532752005626159311}
   - component: {fileID: 5929477884173413788}
   - component: {fileID: 5554778251154401972}
+  - component: {fileID: 5801139758111969497}
   - component: {fileID: 8998142996665019753}
   m_Layer: 6
   m_Name: BulletPistol
@@ -113,6 +114,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5801139758111969497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2352029166769436496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac722043ede2f744be2d2bb26c320c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionParticle: {fileID: 9087219390385421524, guid: 8cb9f387e1762d74a8f3b518e065bb22, type: 3}
+  explosionRadius: 10
+  explosionForce: 100
+  canExplode: 1
 --- !u!114 &8998142996665019753
 MonoBehaviour:
   m_ObjectHideFlags: 0

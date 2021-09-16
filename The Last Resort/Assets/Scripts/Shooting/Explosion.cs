@@ -9,10 +9,14 @@ public class Explosion : MonoBehaviour
     public float explosionForce = 100f;
 
     public bool canExplode = true;
+    public bool isBullet = false;
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag != "Bullet") return;
+        if (!isBullet)
+        {
+            if (collision.gameObject.tag != "Bullet") return;
+        }
 
         MakeExplosion();
     }
