@@ -17,17 +17,15 @@ public class EnemyHealth : MonoBehaviour
 
         switch (layerName)
         {
-            case "BulletPistol": health -= 0.34f; releaseBlood(collision); break;
-            case "BulletRifle": health -= 0.49f; releaseBlood(collision); break;
-            case "BulletBigge": health -= 1.1f; releaseBlood(collision); break;
+            case "BulletPistol": health -= 0.25f; releaseBlood(collision); break;
+            case "BulletRifle": health -= 0.25f; releaseBlood(collision); break;
+            case "BulletBigge": health -= 1.2f; releaseBlood(collision); break;
             default: break;
         }
 
         if(health <= 0)
         {
             Break();
-            EnemyCounter.instance.counterEnemy++;
-            EnemyCounter.instance.EnemyCounterCanvas();
             Destroy(gameObject);
         }
     }
