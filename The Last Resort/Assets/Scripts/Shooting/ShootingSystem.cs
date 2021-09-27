@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -54,7 +54,9 @@ public class ShootingSystem : MonoBehaviour
 
         timeOfLastShoot = Time.timeSinceLevelLoad;
 
+#pragma warning disable CS0612 // Typ lub składowa jest przestarzała
         shootingPlay();
+#pragma warning restore CS0612 // Typ lub składowa jest przestarzała
         amountOfBullets[magazinesID]--;
         displayAmountOfBulltes();
 
@@ -154,6 +156,7 @@ public class ShootingSystem : MonoBehaviour
         bulletsCounter.GetComponent<TextMeshProUGUI>().text = amountOfBullets[magazinesID] + "/" + magazineCapacity;
     }
 
+    [System.Obsolete]
     private void shootingPlay()
     {
         if (weapons[0].active == true)
