@@ -162,7 +162,6 @@ public class ShootingSystem : MonoBehaviour
         if (weapons[0].active == true)
         {
             soundOfShoot[0].Play();
-            weapons[0].transform.rotation = Quaternion.Euler(-1, 0, 0);
         }
         else if (weapons[1].active == true)
         {
