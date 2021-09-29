@@ -582,7 +582,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3826038437685594487}
   m_Layer: 0
-  m_Name: hand-left
+  m_Name: hand-left-under
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -595,15 +595,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4490934475564110797}
-  m_LocalRotation: {x: 0.927856, y: -0.34051883, z: -0.07030115, w: 0.13486241}
+  m_LocalRotation: {x: 0.92785645, y: -0.340516, z: -0.070303, w: 0.13486609}
   m_LocalPosition: {x: -1.6105534, y: 17.078314, z: 1.0231277}
-  m_LocalScale: {x: 0.31899926, y: 0.31899926, z: 0.31899923}
+  m_LocalScale: {x: 0.13486333, y: 0.13486344, z: 0.13486347}
   m_Children:
   - {fileID: 5307497533349976553}
   - {fileID: 101743454920413714}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 12.878, y: -165.939, z: -138.046}
+  m_LocalEulerAnglesHint: {x: 11.677, y: -166.879, z: -138.347}
 --- !u!1 &4535282717181453509
 GameObject:
   m_ObjectHideFlags: 0
