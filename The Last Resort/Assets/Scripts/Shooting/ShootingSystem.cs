@@ -56,6 +56,7 @@ public class ShootingSystem : MonoBehaviour
 
 #pragma warning disable CS0612 // Typ lub składowa jest przestarzała
         shootingPlay();
+        weapons[magazinesID].GetComponent<Animator>().SetTrigger("Shot");
 #pragma warning restore CS0612 // Typ lub składowa jest przestarzała
         amountOfBullets[magazinesID]--;
         displayAmountOfBulltes();
@@ -166,6 +167,7 @@ public class ShootingSystem : MonoBehaviour
         else if (weapons[1].active == true)
         {
             soundOfShoot[1].Play();
+            
         }
         else if (weapons[2].active == true)
         {
