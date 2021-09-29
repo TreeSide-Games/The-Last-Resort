@@ -9,6 +9,8 @@ public class EnemyHealth : MonoBehaviour
 
     public GameObject brokenObject;
     public float breakForce;
+    private bool counted = false;
+
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -32,6 +34,12 @@ public class EnemyHealth : MonoBehaviour
 
     public void Break()
     {
+        if (!counted)
+        {
+            FindObjectOfType<KillsCounter>().addZombieKill();
+            counted = true;
+        }
+
         GameObject broken = Instantiate(brokenObject, transform.position, transform.rotation);
 
         foreach (Rigidbody rigidbody in broken.GetComponentsInChildren<Rigidbody>())
