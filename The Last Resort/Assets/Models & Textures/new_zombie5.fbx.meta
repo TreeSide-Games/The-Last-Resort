@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 203f3f1a967251f4386848e5ab27a9a9
+guid: c6008f8d2c0313e4684cdc9b49ce5f08
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: zombie.002
+    second: {fileID: 2100000, guid: 2373279e28970964387175ab938be7f4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

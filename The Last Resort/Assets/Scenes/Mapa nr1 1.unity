@@ -941,30 +941,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cac54289d6ccd5d47a6db5d62fd1e862, type: 3}
   m_PrefabInstance: {fileID: 73329666}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &78197741 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8431935390611145164, guid: fe5be0a806ceaef4987d0910b0e9e159, type: 3}
-  m_PrefabInstance: {fileID: 1367602029859600284}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &78197743
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 78197741}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a083ba89ff4097a45bdc43e46aba4d34, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &85366508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16691,8 +16667,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 1628800114964658368, guid: 781a3179de23f3b438719c6d2cf52403, type: 3}
-  - {fileID: 1628800114964658368, guid: 781a3179de23f3b438719c6d2cf52403, type: 3}
+  - {fileID: 88385616575595670, guid: fe5be0a806ceaef4987d0910b0e9e159, type: 3}
+  - {fileID: 88385616575595670, guid: fe5be0a806ceaef4987d0910b0e9e159, type: 3}
   - {fileID: 2900794216880003586, guid: 01264f2793c0d2d4eaa4efe6b5f22478, type: 3}
   - {fileID: 2900794216880003586, guid: 01264f2793c0d2d4eaa4efe6b5f22478, type: 3}
   - {fileID: 1628800114964658368, guid: 781a3179de23f3b438719c6d2cf52403, type: 3}
@@ -22191,10 +22167,6 @@ PrefabInstance:
     - target: {fileID: 5115790763275187047, guid: fe5be0a806ceaef4987d0910b0e9e159, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6835443782914625005, guid: fe5be0a806ceaef4987d0910b0e9e159, type: 3}
-      propertyPath: agent
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6835443782914625005, guid: fe5be0a806ceaef4987d0910b0e9e159, type: 3}
       propertyPath: target
