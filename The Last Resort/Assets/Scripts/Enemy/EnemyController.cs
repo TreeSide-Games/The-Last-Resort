@@ -27,14 +27,17 @@ public class EnemyController : MonoBehaviour
 
         if(distance <= lookRadius)
         {
-            agent.SetDestination(target.position);
+            FaceTarget();
             animation.SetFloat("Speed", 1f, 0.1f, Time.deltaTime);
+
+            if (!animation.GetCurrentAnimatorStateInfo(0).IsName("Zombie_attack"))
+            {
+                agent.SetDestination(target.position);
+            }
 
             if (distance <= agent.stoppingDistance)
             {
-                //Atakuj cel
-                FaceTarget();
-
+                animation.SetTrigger("Attack");
             }
         }
         else
