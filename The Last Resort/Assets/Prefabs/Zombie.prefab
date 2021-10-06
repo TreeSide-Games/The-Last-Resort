@@ -96,7 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bloodParticles: {fileID: 2677211683910285890, guid: 695d9e1ab77e25342b4d732af88387d4, type: 3}
   health: 1
-  brokenObject: {fileID: 3104195002338228503, guid: 07ab138f98074244c80304a92b34402c, type: 3}
+  brokenObject: {fileID: 2812409991550128754, guid: 72e6d604cba057d45bd68e0338e38d20, type: 3}
   breakForce: 400
 --- !u!114 &4337351859242124487
 MonoBehaviour:
