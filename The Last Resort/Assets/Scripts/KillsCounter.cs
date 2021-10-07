@@ -13,4 +13,9 @@ public class KillsCounter : MonoBehaviour
         zombieCount++;
         counter.GetComponent<TextMeshProUGUI>().text = "Zombie kills: " + zombieCount;
     }
+
+    public int getZombieKill()
+    {
+        return zombieCount;
+    }
 }
