@@ -92,13 +92,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6302931589819284495}
+  - component: {fileID: 3317115459246355732}
   m_Layer: 0
   m_Name: Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6302931589819284495
 Transform:
   m_ObjectHideFlags: 0
@@ -106,7 +107,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6643744372082108085}
-  m_LocalRotation: {x: -0, y: 0.00087967503, z: -0, w: 0.99999964}
+  m_LocalRotation: {x: 0, y: 0.0008814022, z: 0, w: 0.99999964}
   m_LocalPosition: {x: 0.9821647, y: -1.049, z: 1.1851509}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -115,7 +116,26 @@ Transform:
   - {fileID: 9163485295018429396}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -132.77, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0.101, z: 0}
+--- !u!95 &3317115459246355732
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6643744372082108085}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 81c2356b275475340a7a4f0aab6c7801, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7082772461127882212
 GameObject:
   m_ObjectHideFlags: 0
