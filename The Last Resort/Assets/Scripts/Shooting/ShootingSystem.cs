@@ -16,8 +16,8 @@ public class ShootingSystem : MonoBehaviour
     private float timeOfLastShoot = 0;
     public float shootPeriod = 1f;
     public int magazineCapacity = 6;
-    private int[] amountOfMagazines = new int[4];
-    private int[] amountOfBullets = new int[4];
+    private int[] amountOfMagazines = new int[5];
+    private int[] amountOfBullets = new int[5];
     private int magazinesID = 0;
 
     public GameObject bulletsCounter;
@@ -32,8 +32,13 @@ public class ShootingSystem : MonoBehaviour
         amountOfBullets[1] = 30;
         amountOfBullets[2] = 4;
         amountOfBullets[3] = 10;
+        amountOfBullets[4] = 8;
 
         amountOfMagazines[0] = 1;
+        for (int i = 1; i < 5; i++)
+        {
+            amountOfMagazines[i] = 3;
+        }
         displayAmountOfBulltes();
         magazines = GetComponent<Magazines>();
     }
@@ -73,17 +78,18 @@ public class ShootingSystem : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Alpha1))
         {
-           weapons[0].SetActive(true);
-           weapons[1].SetActive(false);
-           weapons[2].SetActive(false);
-           weapons[3].SetActive(false);
+            weapons[0].SetActive(true);
+            weapons[1].SetActive(false);
+            weapons[2].SetActive(false);
+            weapons[3].SetActive(false);
+            weapons[4].SetActive(false);
 
-           shootPeriod = 0.5f;
-           magazineCapacity = 6;
-           magazinesID = 0;
+            shootPeriod = 0.5f;
+            magazineCapacity = 6;
+            magazinesID = 0;
 
-           displayAmountOfBulltes();
-           magazines.ChangeMagazine(amountOfMagazines[magazinesID], magazinesID);
+            displayAmountOfBulltes();
+            magazines.ChangeMagazine(amountOfMagazines[magazinesID], magazinesID);
         }
         else if (Input.GetKey(KeyCode.Alpha2))
         {
@@ -91,6 +97,7 @@ public class ShootingSystem : MonoBehaviour
             weapons[1].SetActive(true);
             weapons[2].SetActive(false);
             weapons[3].SetActive(false);
+            weapons[4].SetActive(false);
 
             shootPeriod = 0.1f;
             magazineCapacity = 30;
@@ -105,6 +112,7 @@ public class ShootingSystem : MonoBehaviour
             weapons[1].SetActive(false);
             weapons[2].SetActive(true);
             weapons[3].SetActive(false);
+            weapons[4].SetActive(false);
 
             shootPeriod = 1f;
             magazineCapacity = 4;
@@ -119,10 +127,26 @@ public class ShootingSystem : MonoBehaviour
             weapons[1].SetActive(false);
             weapons[2].SetActive(false);
             weapons[3].SetActive(true);
+            weapons[4].SetActive(false);
 
             shootPeriod = 2f;
             magazineCapacity = 10;
             magazinesID = 3;
+
+            displayAmountOfBulltes();
+            magazines.ChangeMagazine(amountOfMagazines[magazinesID], magazinesID);
+        }
+        else if (Input.GetKey(KeyCode.Alpha5))
+        {
+            weapons[0].SetActive(false);
+            weapons[1].SetActive(false);
+            weapons[2].SetActive(false);
+            weapons[3].SetActive(false);
+            weapons[4].SetActive(true);
+
+            shootPeriod = 0.7f;
+            magazineCapacity = 8;
+            magazinesID = 4;
 
             displayAmountOfBulltes();
             magazines.ChangeMagazine(amountOfMagazines[magazinesID], magazinesID);
@@ -146,11 +170,11 @@ public class ShootingSystem : MonoBehaviour
         reloadSound.Play();
         if (magazinesID != 0)
         {
-          amountOfMagazines[magazinesID]--;
+            amountOfMagazines[magazinesID]--;
+            magazines.RemoveMagazine();
         }
         amountOfBullets[magazinesID] = magazineCapacity;
         displayAmountOfBulltes();
-        magazines.RemoveMagazine();
     }
     private void displayAmountOfBulltes()
     {
@@ -173,9 +197,13 @@ public class ShootingSystem : MonoBehaviour
         {
             soundOfShoot[2].Play();
         }
-        else
+        else if (weapons[3].active == true)
         {
             soundOfShoot[3].Play();
+        }
+        else
+        {
+            soundOfShoot[4].Play();
         }
     }
 
@@ -186,13 +214,33 @@ public class ShootingSystem : MonoBehaviour
 
     private void bulletRelease(int typeOfWeapon)
     {
-        var bullet = Instantiate(bulletPrefab[typeOfWeapon]);
+        if(typeOfWeapon != 4)
+        {
+            var bullet = Instantiate(bulletPrefab[typeOfWeapon]);
         
-        bullet.transform.position = transform.position + transform.rotation * spawnPosition;
-        bullet.transform.rotation = GetComponentInParent<Gracz>().transform.rotation;
+            bullet.transform.position = transform.position + transform.rotation * spawnPosition;
+            bullet.transform.rotation = GetComponentInParent<Gracz>().transform.rotation;
 
-        var rigidbody = bullet.GetComponent<Rigidbody>();
+            var rigidbody = bullet.GetComponent<Rigidbody>();
 
-        rigidbody.velocity = transform.rotation * shootDirection;
+            rigidbody.velocity = transform.rotation * shootDirection;
+        }
+        else
+        {
+            GameObject[] bullet = new GameObject[6];
+            Rigidbody rigidbody;
+
+            for (int i = 0; i < 6; i++)
+            {
+                bullet[i] = Instantiate(bulletPrefab[typeOfWeapon]);
+                bullet[i].transform.position = transform.position + transform.rotation * spawnPosition;
+                bullet[i].transform.rotation = GetComponentInParent<Gracz>().transform.rotation;
+
+                rigidbody = bullet[i].GetComponent<Rigidbody>();
+
+                rigidbody.velocity = transform.rotation * shootDirection * Random.Range(0.1f, 2f);
+            }
+        }
+        
     }
 }
