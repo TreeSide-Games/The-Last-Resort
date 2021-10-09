@@ -24,6 +24,11 @@ public class BrutalController : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        if (!agent.isOnNavMesh)
+        {
+            Destroy(gameObject);
+        }
+
         float distance = Vector3.Distance(player.position, transform.position);
 
         if (distance <= lookRadius)

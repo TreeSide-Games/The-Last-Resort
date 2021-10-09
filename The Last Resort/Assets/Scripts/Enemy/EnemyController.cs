@@ -23,6 +23,11 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        if (!agent.isOnNavMesh)
+        {
+            Destroy(gameObject);
+        }
+
         float distance = Vector3.Distance(target.position, transform.position);
 
         if(distance <= lookRadius)

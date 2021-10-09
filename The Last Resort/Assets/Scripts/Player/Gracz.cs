@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 public class Gracz : MonoBehaviour
 {
     public GameObject pasekZycia;
     public AudioSource[] dzwiekObrazen;
     public float zycie = 0.3f;
+
+    public TextMeshProUGUI odliczanieIleZyje;
+    public TextMeshProUGUI iloscZabitych;
 
     private void Start()
     {
@@ -32,6 +36,8 @@ public class Gracz : MonoBehaviour
 
         if(zycie <= 0)
         {
+            PlayerPrefs.SetString("Time", odliczanieIleZyje.text);
+            PlayerPrefs.SetString("Kills", iloscZabitych.text);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
