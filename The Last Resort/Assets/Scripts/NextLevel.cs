@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class NextLevel : MonoBehaviour
 {
     public GameObject endInformation;
+    public GameObject levelInformation;
 
     bool isFinished = false;
 
@@ -23,6 +24,17 @@ public class NextLevel : MonoBehaviour
             endInformation.SetActive(true);
             isFinished = true;
         }
+        else
+        {
+            levelInformation.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (!other.GetComponent<Gracz>()) return;
+
+        levelInformation.SetActive(false);
     }
 
     private void Update()
