@@ -51,7 +51,7 @@ public class ShootingSystem : MonoBehaviour
             Reload();
         }
 
-        if (!Input.GetKey(KeyCode.Mouse0)) return;
+        if (!Input.GetKey(KeyCode.Mouse0) || Input.GetKey(KeyCode.Escape)) return;
 
         if (amountOfBullets[magazinesID] <= 0) return;
 
