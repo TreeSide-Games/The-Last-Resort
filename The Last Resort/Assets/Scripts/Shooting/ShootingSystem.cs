@@ -31,13 +31,13 @@ public class ShootingSystem : MonoBehaviour
         amountOfBullets[0] = 6;
         amountOfBullets[1] = 30;
         amountOfBullets[2] = 4;
-        amountOfBullets[3] = 10;
+        amountOfBullets[3] = 3;
         amountOfBullets[4] = 8;
 
         amountOfMagazines[0] = 1;
         for (int i = 1; i < 5; i++)
         {
-            amountOfMagazines[i] = 3;
+            amountOfMagazines[i] = 1;
         }
         displayAmountOfBulltes();
         magazines = GetComponent<Magazines>();
@@ -130,7 +130,7 @@ public class ShootingSystem : MonoBehaviour
             weapons[4].SetActive(false);
 
             shootPeriod = 2f;
-            magazineCapacity = 10;
+            magazineCapacity = 3;
             magazinesID = 3;
 
             displayAmountOfBulltes();
