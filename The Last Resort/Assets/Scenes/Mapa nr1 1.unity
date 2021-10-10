@@ -20425,8 +20425,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSorce:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1266236618}
+  - {fileID: 292608399}
   - {fileID: 9087219390385421524, guid: 8cb9f387e1762d74a8f3b518e065bb22, type: 3}
   - {fileID: 2900794216880003586, guid: 01264f2793c0d2d4eaa4efe6b5f22478, type: 3}
   - {fileID: 88385616575595670, guid: fe5be0a806ceaef4987d0910b0e9e159, type: 3}
@@ -24284,7 +24284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSorce:
-  - {fileID: 0}
+  - {fileID: 727768997}
   parentObject: {fileID: 1796573275}
 --- !u!114 &1216110275
 MonoBehaviour:
@@ -30460,6 +30460,7 @@ GameObject:
   - component: {fileID: 1580418916}
   - component: {fileID: 1580418914}
   - component: {fileID: 1580418913}
+  - component: {fileID: 1580418915}
   m_Layer: 0
   m_Name: GameContoller
   m_TagString: GameController
@@ -30493,6 +30494,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 1080851355}
+--- !u!114 &1580418915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580418912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e142fdd5866cf0244990d6c8d21c1a9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  options: {fileID: 1952797851}
 --- !u!114 &1580418916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33092,7 +33106,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1580418915}
         m_TargetAssemblyTypeName: InGameOptions, Assembly-CSharp
         m_MethodName: BackToGame
         m_Mode: 1
