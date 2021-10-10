@@ -23606,7 +23606,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1155621769
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31227,9 +31227,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 6219907957881811502, guid: e2abdad6174088541a0fc3580b56f97f, type: 3}
+  - {fileID: 8863969045526625189, guid: 4eb06d196d1b9814587aa3c5eb5bc2e2, type: 3}
   - {fileID: 8863969045526625189, guid: 4eb06d196d1b9814587aa3c5eb5bc2e2, type: 3}
   - {fileID: 722404844900270818, guid: 59cad01e934d0324e90acf6b7c321532, type: 3}
+  - {fileID: 158925863720920496, guid: 50ef66e5c9cb10c479c8db52b9d6ae58, type: 3}
   spawnRate: 1
   minX: 30
   maxX: 230
@@ -37779,34 +37780,34 @@ Transform:
   - {fileID: 687132766}
   - {fileID: 1348725396}
   - {fileID: 1880591969}
-  - {fileID: 118714476}
   - {fileID: 772767539}
   - {fileID: 52044576}
-  - {fileID: 1210246508}
   - {fileID: 455809454}
   - {fileID: 1187690223}
   - {fileID: 124186717}
   - {fileID: 1404830465}
   - {fileID: 1113337369}
   - {fileID: 1105407761}
-  - {fileID: 835988872}
   - {fileID: 535777941}
-  - {fileID: 1698660842}
+  - {fileID: 835988872}
   - {fileID: 1580143009}
-  - {fileID: 1519560902}
+  - {fileID: 214126343}
   - {fileID: 651449620}
   - {fileID: 1624000872}
-  - {fileID: 433258197}
   - {fileID: 109490748}
-  - {fileID: 1323471397}
-  - {fileID: 1542811605}
-  - {fileID: 1955072309}
+  - {fileID: 433258197}
   - {fileID: 587034760}
-  - {fileID: 214126343}
+  - {fileID: 1323471397}
+  - {fileID: 1698660842}
+  - {fileID: 1542811605}
+  - {fileID: 118714476}
+  - {fileID: 1955072309}
+  - {fileID: 1210246508}
+  - {fileID: 1519560902}
   - {fileID: 259433424}
   - {fileID: 1567836214}
-  - {fileID: 1987534527}
   - {fileID: 1690220517}
+  - {fileID: 1987534527}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
