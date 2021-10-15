@@ -6254,6 +6254,7 @@ MonoBehaviour:
   - {fileID: 292608410}
   - {fileID: 292608407}
   reloadSound: {fileID: 292608408}
+  player: {fileID: 1266236618}
   spawnPosition: {x: 0.5, y: -0.2, z: 3}
   shootDirection: {x: 0, y: 0, z: 100}
   shootPeriod: 0.5
@@ -8724,15 +8725,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5829750394982425775, guid: 43335101ffae37c42aaf3450fd05e1e7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.942
+      value: 0.93
       objectReference: {fileID: 0}
     - target: {fileID: 5829750394982425775, guid: 43335101ffae37c42aaf3450fd05e1e7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.685
+      value: -7.68
       objectReference: {fileID: 0}
     - target: {fileID: 5829750394982425775, guid: 43335101ffae37c42aaf3450fd05e1e7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.629
+      value: 1.55
       objectReference: {fileID: 0}
     - target: {fileID: 5829750394982425775, guid: 43335101ffae37c42aaf3450fd05e1e7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -23606,7 +23607,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1155621769
 RectTransform:
   m_ObjectHideFlags: 0

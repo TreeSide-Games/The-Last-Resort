@@ -10,6 +10,10 @@ public class ShootingSystem : MonoBehaviour
     public AudioSource[] soundOfShoot;
     public AudioSource reloadSound;
 
+    public GameObject player;
+    private PlayerControler playerControler;
+    private CharacterController characterController;
+
     public Vector3 spawnPosition;
     public Vector3 shootDirection;
 
@@ -41,10 +45,24 @@ public class ShootingSystem : MonoBehaviour
         }
         displayAmountOfBulltes();
         magazines = GetComponent<Magazines>();
+
+        playerControler = player.GetComponent<PlayerControler>();
+        characterController = player.GetComponent<CharacterController>();
     }
     void Update()
     {
         ChangeWeapon();
+        weapons[magazinesID].GetComponent<Animator>().SetFloat("Speed", playerControler.predkoscPoruszania);
+
+        if (!characterController.isGrounded)
+        {
+            weapons[magazinesID].GetComponent<Animator>().SetBool("Jump", true);
+        }
+        else
+        {
+            weapons[magazinesID].GetComponent<Animator>().SetBool("Jump", false);
+        }
+        
 
         if (Input.GetKeyDown(KeyCode.R))
         {
