@@ -22370,6 +22370,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shotgun
       objectReference: {fileID: 0}
+    - target: {fileID: 6643744372082108085, guid: 11de7222e2419724ea2e6b5e1d8c90cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11de7222e2419724ea2e6b5e1d8c90cc, type: 3}
 --- !u!1001 &1120619525
