@@ -11,6 +11,11 @@ public class Explosion : MonoBehaviour
     public bool canExplode = true;
     public bool isBullet = false;
 
+    ObjectPooler objectPooler;
+    private void Start()
+    {
+        objectPooler = ObjectPooler.Instance;
+    }
     public void OnCollisionEnter(Collision collision)
     {
         if (!isBullet)
@@ -60,7 +65,14 @@ public class Explosion : MonoBehaviour
                 secondExplode.MakeExplosion();
             }
         }
-        Destroy(gameObject);
+        if (isBullet)
+        {
+            objectPooler.BackToPool(gameObject.name.Split(char.Parse("("))[0], gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void OnDrawGizmosSelected()

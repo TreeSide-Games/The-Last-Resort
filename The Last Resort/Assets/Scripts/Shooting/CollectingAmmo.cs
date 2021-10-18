@@ -37,7 +37,6 @@ public class CollectingAmmo : MonoBehaviour
             default: break;
         }
 
-        gameObject.SetActive(false);
         //Destroy(gameObject, 0.5f);
     }
 }

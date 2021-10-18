@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ShootingSystem : MonoBehaviour
 {
-    public GameObject[] bulletPrefab;
+    public string[] bullets;
     public GameObject shootFlashPrefab;
     public AudioSource[] soundOfShoot;
     public AudioSource reloadSound;
@@ -29,6 +29,8 @@ public class ShootingSystem : MonoBehaviour
     public GameObject[] weapons;
 
     private Magazines magazines;
+
+    ObjectPooler objectPooler;
     private void Start()
     {
         //soundOfShoot = GetComponents<AudioSource>();
@@ -48,6 +50,8 @@ public class ShootingSystem : MonoBehaviour
 
         playerControler = player.GetComponent<PlayerControler>();
         characterController = player.GetComponent<CharacterController>();
+
+        objectPooler = ObjectPooler.Instance;
     }
     void Update()
     {
@@ -234,10 +238,11 @@ public class ShootingSystem : MonoBehaviour
     {
         if(typeOfWeapon != 4)
         {
-            var bullet = Instantiate(bulletPrefab[typeOfWeapon]);
+            //var bullet = Instantiate(bullets[typeOfWeapon]);
+            var bullet = objectPooler.SpawnFromPool(bullets[typeOfWeapon], transform.position + transform.rotation * spawnPosition, GetComponentInParent<Gracz>().transform.rotation);
         
-            bullet.transform.position = transform.position + transform.rotation * spawnPosition;
-            bullet.transform.rotation = GetComponentInParent<Gracz>().transform.rotation;
+            //bullet.transform.position = transform.position + transform.rotation * spawnPosition;
+            //bullet.transform.rotation = GetComponentInParent<Gracz>().transform.rotation;
 
             var rigidbody = bullet.GetComponent<Rigidbody>();
 
@@ -245,16 +250,18 @@ public class ShootingSystem : MonoBehaviour
         }
         else
         {
-            GameObject[] bullet = new GameObject[6];
+            //GameObject[] bullet = new GameObject[6];
+            GameObject bullet;
             Rigidbody rigidbody;
 
             for (int i = 0; i < 6; i++)
             {
-                bullet[i] = Instantiate(bulletPrefab[typeOfWeapon]);
-                bullet[i].transform.position = transform.position + transform.rotation * spawnPosition;
-                bullet[i].transform.rotation = GetComponentInParent<Gracz>().transform.rotation;
+                bullet = objectPooler.SpawnFromPool(bullets[typeOfWeapon], transform.position + transform.rotation * spawnPosition, GetComponentInParent<Gracz>().transform.rotation);
+                //bullet[i] = Instantiate(bulletPrefab[typeOfWeapon]);
+                //bullet[i].transform.position = transform.position + transform.rotation * spawnPosition;
+                //bullet[i].transform.rotation = GetComponentInParent<Gracz>().transform.rotation;
 
-                rigidbody = bullet[i].GetComponent<Rigidbody>();
+                rigidbody = bullet.GetComponent<Rigidbody>();
 
                 rigidbody.velocity = transform.rotation * shootDirection * Random.Range(0.1f, 2f);
             }

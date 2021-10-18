@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BulletBazooke Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1578377695872049937, guid: b653c2e277de11e42ba0f0a03bd18eb3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5741456457824550962, guid: b653c2e277de11e42ba0f0a03bd18eb3, type: 3}
       propertyPath: m_RootOrder
       value: 0
