@@ -5,12 +5,18 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public GameObject bloodParticles;
-    public float health = 1f;
+    public float maxHealth;
+    private float health;
 
     public GameObject brokenObject;
     public float breakForce;
+    public string enemyName;
     private bool counted = false;
 
+    private void Start()
+    {
+        health = maxHealth;
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -28,7 +34,9 @@ public class EnemyHealth : MonoBehaviour
         if(health <= 0)
         {
             Break();
-            Destroy(gameObject);
+            health = maxHealth;
+            ObjectPooler.Instance.BackToPool(enemyName, gameObject);
+            //Destroy(gameObject);
         }
     }
 
@@ -48,7 +56,9 @@ public class EnemyHealth : MonoBehaviour
             rigidbody.AddForce(force);
         }
 
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        health = maxHealth;
+        ObjectPooler.Instance.BackToPool(enemyName, gameObject);
         Destroy(broken, 20f);
     }
 

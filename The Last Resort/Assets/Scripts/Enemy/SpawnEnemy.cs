@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
 {
-    public GameObject[] enemies;
+    public string[] enemies;
     public float spawnRate = 3f;
 
     public float minX = 10f;
@@ -15,8 +15,11 @@ public class SpawnEnemy : MonoBehaviour
 
     private Vector3 spawnPosition;
 
+    ObjectPooler objectPooler;
+
     private void Start()
     {
+        objectPooler = ObjectPooler.Instance;
         InvokeRepeating("randomSpawn", 3f, spawnRate);
     }
 
@@ -25,6 +28,11 @@ public class SpawnEnemy : MonoBehaviour
         spawnPosition = new Vector3(Random.Range(minX, maxX), 1.51f, Random.Range(minZ, maxZ));
 
         var random = Random.Range(0, enemies.Length);
-        Instantiate(enemies[random], spawnPosition,  enemies[random].transform.rotation);
+        //Instantiate(enemies[random], spawnPosition,  enemies[random].transform.rotation);
+
+        //Debug.Log(objectPooler.poolDictionary["Brutal"].Count);
+        if (objectPooler.poolDictionary[enemies[random]].Count == 0) return;
+
+        objectPooler.SpawnFromPool(enemies[random], spawnPosition, Quaternion.identity);
     }
 }

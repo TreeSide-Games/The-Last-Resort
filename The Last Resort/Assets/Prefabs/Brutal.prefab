@@ -100,9 +100,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bloodParticles: {fileID: 2677211683910285890, guid: 695d9e1ab77e25342b4d732af88387d4, type: 3}
+  maxHealth: 3
   health: 3
   brokenObject: {fileID: 3766242420323870075, guid: afabed78fad663c4294faf01a4c51476, type: 3}
   breakForce: 700
+  enemyName: Brutal
 --- !u!114 &3044146010052609270
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -95,9 +95,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bloodParticles: {fileID: 2677211683910285890, guid: 695d9e1ab77e25342b4d732af88387d4, type: 3}
+  maxHealth: 1
   health: 1
   brokenObject: {fileID: 2812409991550128754, guid: 72e6d604cba057d45bd68e0338e38d20, type: 3}
   breakForce: 400
+  enemyName: Zombie
 --- !u!114 &4337351859242124487
 MonoBehaviour:
   m_ObjectHideFlags: 0
