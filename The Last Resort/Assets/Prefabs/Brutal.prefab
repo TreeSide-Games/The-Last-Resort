@@ -101,7 +101,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bloodParticles: {fileID: 2677211683910285890, guid: 695d9e1ab77e25342b4d732af88387d4, type: 3}
   maxHealth: 3
-  health: 3
   brokenObject: {fileID: 3766242420323870075, guid: afabed78fad663c4294faf01a4c51476, type: 3}
   breakForce: 700
   enemyName: Brutal
@@ -181,7 +180,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 22aa19480718688458e46fb7ec57f502, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2979947
+  m_Volume: 0.17561191
   m_Pitch: 1
   Loop: 0
   Mute: 0
